@@ -2614,8 +2614,18 @@ input, select, textarea {
 		cursor: pointer;
 	}
 
+	.carousel-button small {
+		position: absolute;
+		z-index: 2;
+		background: none;
+		font-size: 1rem;
+		top: 50%;
+		transform: translateY(-50%);
+		cursor: pointer;
+	}
+
 	.carousel-button.prev {
-		left: 1rem;
+		left: 1.5rem;
 	}
 
 	.carousel-button.next {
@@ -2672,12 +2682,21 @@ input, select, textarea {
 			display: block;
 			position: absolute;
 			margin: 4rem 0;
+			margin-top: 0;
 			width: 100%;
 			opacity: 0;
+			z-index: -1;
 		}
 
 			.image.main[data-active] {
 				position: relative;
+				opacity: 1;
+				z-index: 1;
+			}
+
+			.image.main.small[data-active] {
+				position: relative;
+				margin: 2.5rem 0;
 				opacity: 1;
 				z-index: 1;
 			}
@@ -2689,6 +2708,8 @@ input, select, textarea {
 			.image.main img {
 				width: 100%;
 			}
+
+			
 
 		@media screen and (max-width: 736px) {
 
@@ -2731,6 +2752,7 @@ input, select, textarea {
 		list-style: none;
 		margin-left: -1rem;
 		padding-left: 0;
+		
 	}
 
 		ul.actions li {
